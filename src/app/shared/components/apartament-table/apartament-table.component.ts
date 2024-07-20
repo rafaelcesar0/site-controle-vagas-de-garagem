@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { Apartamento } from '../../interface/apartamento.interface';
+import { ApartamentosService } from '../../services/apartamentos.service';
 
 @Component({
   selector: 'app-apartament-table',
@@ -10,12 +11,12 @@ import { Component, inject } from '@angular/core';
 })
 export class ApartamentTableComponent {
 
-  aptos: any[] = [];
+  aptos: Apartamento[] = [];
 
-  http = inject(HttpClient);
+  apartamentosService = inject(ApartamentosService);
 
   ngOnInit() {
-    this.http.get<any>('/api/apartamento').subscribe((aptos) => {
+    this.apartamentosService.getAll().subscribe((aptos) => {
       this.aptos = aptos;
     });
   }
