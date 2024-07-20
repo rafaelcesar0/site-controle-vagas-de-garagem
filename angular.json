@@ -90,6 +90,9 @@
               "buildTarget": "site-controle-vagas-de-garagem:build:development"
             }
           },
+          "options": {
+            "proxyConfig": "proxy.config.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
