@@ -15,54 +15,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>1</td>
-        <td>101</td>
-        <td>João</td>
-        <td>(85) 9 8888-7777</td>
-        <td>joao&#64;gmail.com</td>
+      @for (apto of aptos; track apto) {
+        <tr>
+        <th scope="row">{{apto.id}}</th>
+        <td>{{apto.bloco}}</td>
+        <td>{{apto.apartamento}}</td>
+        <td>{{apto.morador}}</td>
+        <td>{{apto.telefone}}</td>
+        <td>{{apto.email}}</td>
         <td class="text-center"><button class="bnt-edit">Edit</button></td>
         <td class="text-center"><button class="bnt-del">Delete</button></td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>1</td>
-        <td>102</td>
-        <td>Maria</td>
-        <td>(85) 9 6666-5555</td>
-        <td>maria&#64;gmail.com</td>
-        <td class="text-center"><button class="bnt-edit">Edit</button></td>
-        <td class="text-center"><button class="bnt-del">Delete</button></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>2</td>
-        <td>101</td>
-        <td>Romeu</td>
-        <td>(85) 9 4444-3333</td>
-        <td></td>
-        <td class="text-center"><button class="bnt-edit">Edit</button></td>
-        <td class="text-center"><button class="bnt-del">Delete</button></td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>2</td>
-        <td>102</td>
-        <td>Julieta</td>
-        <td>(85) 9 2222-1111</td>
-        <td></td>
-        <td class="text-center"><button class="bnt-edit">Edit</button></td>
-        <td class="text-center"><button class="bnt-del">Delete</button></td>
-      </tr>
+      }
     </tbody>
   </table>
 </div>
 
-<ul>
-  @for (apto of aptos; track apto) {
-    <li>
-      {{apto.morador}}
-    </li>
-  }
-</ul>
+<ul></ul>
