@@ -3,11 +3,12 @@ import { ApartamentosService } from '../../services/apartamentos.service';
 import { Apartamento } from '../../interface/apartamento.interface';
 import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
+import { NavBarComponent } from "../nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-vehicle-table',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NavBarComponent],
   templateUrl: './vehicle-table.component.html',
 })
 export class VehicleTableComponent {

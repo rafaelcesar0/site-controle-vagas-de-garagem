@@ -18,6 +18,6 @@ export class ApartamentFormComponent {
   });
 
   btnBackApartament() {
-    this.router.navigate(['/apartment']);
+    this.router.navigate(['/']);
   }
 }

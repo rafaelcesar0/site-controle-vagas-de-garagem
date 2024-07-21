@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { Apartamento } from '../../interface/apartamento.interface';
 import { ApartamentosService } from '../../services/apartamentos.service';
 import { Router } from '@angular/router';
+import { NavBarComponent } from "../nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-apartment-table',
   standalone: true,
-  imports: [],
+  imports: [NavBarComponent],
   templateUrl: './apartment-table.component.html',
 })
 export class ApartamentTableComponent {

@@ -4,7 +4,7 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'site-controle-vagas-de-garagem';
 
   btnTableApartament() {
-    this.router.navigate(['/apartment']);
+    this.router.navigate(['/']);
   }
   btnTableVehicle() {
     this.router.navigate(['/vehicle']);

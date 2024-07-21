@@ -1,0 +1,21 @@
+<div class="text-center pb-4">
+    <button
+      class="btn-group btn-table-apartment"
+      (click)="btnTableApartament()"
+      [routerLink]="['/']"
+      routerLinkActive="btn-table-apartment"
+      [routerLinkActiveOptions]="{ exact: true }"
+
+    >
+      Tabela Apartamnetos
+    </button>
+    <button
+      class="btn-group btn-table-vahicle"
+      (click)="btnTableVehicle()"
+      [routerLink]="['/vehicle']"
+      routerLinkActive="btn-table-vahicle"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Tabela Veiculos
+    </button>
+  </div>
