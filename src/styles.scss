@@ -7,11 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-htlm,
-body {
-  height: 100%;
-}
-
 button {
   padding: 2px 8px;
   border-radius: 8px;
@@ -36,13 +31,35 @@ button {
 
 }
 
-.bnt-edit {
+.btn-edit {
   background-color: lightblue;
-
 }
-
-.bnt-del {
-
+.btn-edit:active{
+  background-color: rgb(127, 201, 226);
+}
+.btn-del {
   background-color: lightcoral;
 }
+.btn-del:active {
+  background-color: rgb(235, 96, 96);
+}
+.btn-create {
+  background-color: lightgreen;
+}
+.btn-create:active {
+  background-color: rgb(97, 231, 97);
+}
 
+.apartamneto-title {
+ @extend .title-table;
+}
+
+.btn-table-vahicle,
+.title-vahicle {
+  background-color: lightpink;
+}
+
+.btn-table-apartment,
+.title-apartment {
+  background-color: lightsteelblue;
+}

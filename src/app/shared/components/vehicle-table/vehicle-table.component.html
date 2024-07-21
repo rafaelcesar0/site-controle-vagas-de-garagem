@@ -1,5 +1,8 @@
-<div class="container-center">
-  <h1 class="title-table">Tabela Veículos</h1>
+<div class="border border-3 rounded-3 text-center">
+  <h1 class="title-table title-vahicle">Tabela Veículos</h1>
+  <div class="text-end p-4">
+    <button class="btn-group btn-create" (click)="btnCreateVehicle()">Create</button>
+  </div>
 
   <table class="table">
     <thead>
@@ -11,55 +14,25 @@
         <th scope="col">Marca</th>
         <th scope="col">Modelo</th>
         <th scope="col">Cor</th>
-        <th scope="col" class="text-center">Edit</th>
-        <th scope="col" class="text-center">Delete</th>
+        <th scope="col" class="text-center">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>1</td>
-        <td>101</td>
-        <td>AAA-1111</td>
-        <td>BMW</td>
-        <td>GSV-222</td>
-        <td>Branco</td>
-        <td class="text-center"><button class="bnt-edit">Edit</button></td>
-        <td class="text-center"><button class="bnt-del">Delete</button></td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>1</td>
-        <td>102</td>
-        <td>AAA-2222</td>
-        <td>NISSAN</td>
-        <td>PQP-007</td>
-        <td>Preto</td>
-        <td class="text-center"><button class="bnt-edit">Edit</button></td>
-        <td class="text-center"><button class="bnt-del">Delete</button></td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>2</td>
-        <td>101</td>
-        <td>BBB-1111</td>
-        <td>GOL</td>
-        <td>GVT</td>
-        <td>Branco</td>
-        <td class="text-center"><button class="bnt-edit">Edit</button></td>
-        <td class="text-center"><button class="bnt-del">Delete</button></td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>2</td>
-        <td>102</td>
-        <td>BBB-2222</td>
-        <td>FERRARI</td>
-        <td>SPORT</td>
-        <td>Vermelho</td>
-        <td class="text-center"><button class="bnt-edit">Edit</button></td>
-        <td class="text-center"><button class="bnt-del">Delete</button></td>
-      </tr>
+      <ng-container *ngFor="let apto of aptos">
+    <tr *ngFor="let veiculo of apto.veiculos">
+      <td>{{ veiculo.id }}</td>
+      <td>{{ apto.bloco }}</td>
+      <td>{{ apto.apartamento }}</td>
+      <td>{{ veiculo.placa }}</td>
+      <td>{{ veiculo.marca }}</td>
+      <td>{{ veiculo.modelo }}</td>
+      <td>{{ veiculo.cor }}</td>
+      <td class="text-center">
+        <button class="btn-group btn-edit">Edit</button>
+        <button class="btn-group btn-del">Delete</button>
+      </td>
+    </tr>
+  </ng-container>
     </tbody>
   </table>
 </div>

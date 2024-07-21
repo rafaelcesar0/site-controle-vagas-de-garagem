@@ -1,0 +1,40 @@
+<div class="border border-3 rounded-3 text-center">
+  <h1 class="title-table title-apartment">Tabela Apartamentos</h1>
+  <div class="text-end p-4">
+    <button class="btn-group btn-create" (click)="btnCreateApartament()">
+      Create
+    </button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Bloco</th>
+        <th scope="col">Apartamento</th>
+        <th scope="col">Morador</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Email</th>
+        <th scope="col" class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (apto of aptos; track apto) {
+      <tr>
+        <th scope="row">{{ apto.id }}</th>
+        <td>{{ apto.bloco }}</td>
+        <td>{{ apto.apartamento }}</td>
+        <td>{{ apto.morador }}</td>
+        <td>{{ apto.telefone }}</td>
+        <td>{{ apto.email }}</td>
+        <td class="text-center">
+          <button class="btn-group btn-edit">Edit</button>
+          <button class="btn-group btn-del">Delete</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<ul></ul>
