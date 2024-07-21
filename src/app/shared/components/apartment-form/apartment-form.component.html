@@ -1,63 +1,74 @@
-<form class="border border-3 rounded-3 p-5">
-  <h1>Formulario Apartamento</h1>
-  <div class="mb-3">
-    <label for="input-bloco" class="form-label"
-      >Bloco</label
-    >
-    <input
-      type="number"
-      class="form-control"
-      id="input-bloco"
-      placeholder="1"
-    />
-  </div>
-  <div class="mb-3">
-    <label for="input-apartamento" class="form-label"
-      >Apartamento</label
-    >
-    <input
-      type="number"
-      class="form-control"
-      id="input-apartamento"
-      placeholder="200"
-    />
-  </div>
-  <div class="mb-3">
-    <label for="input-morador" class="form-label"
-      >Morador</label
-    >
-    <input
-      type="text"
-      class="form-control"
-      id="input-morador"
-      placeholder="Fulano de Tal"
-    />
-  </div>
-  <div class="mb-3">
-    <label for="input-telefone" class="form-label"
-      >Telefone</label
-    >
-    <input
-      type="text"
-      class="form-control"
-      id="input-telefone"
-      placeholder="(**) * ****-****"
-    />
-  </div>
-  <div class="mb-3">
-    <label for="input-email" class="form-label"
-      >Email</label
-    >
-    <input
-      type="email"
-      class="form-control"
-      id="input-email"
-      placeholder="name@example.com"
-    />
-  </div>
-  <div class="mb-3 ">
-    <button class="btn-group btn-del" (click)="btnBackApartament()">Voltar</button>
-    <button class="btn-group btn-create">Salvar</button>
-  </div>
-
-</form>
+<div class="justify-content-center" style="display: flex">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="border border-3 rounded-3 p-5"
+    style="max-width: 800px"
+  >
+    <h1>Formulario Apartamento</h1>
+    <div class="mb-3">
+      <label for="input-bloco" class="form-label"
+        >Bloco<span class="text-danger">*</span></label
+      >
+      <input
+        formControlName="bloco"
+        type="number"
+        class="form-control"
+        id="input-bloco"
+        placeholder="1"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="input-apartamento" class="form-label"
+        >Apartamento<span class="text-danger">*</span></label
+      >
+      <input
+        formControlName="apartamento"
+        type="number"
+        class="form-control"
+        id="input-apartamento"
+        placeholder="200"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="input-morador" class="form-label"
+        >Morador<span class="text-danger">*</span></label
+      >
+      <input
+        formControlName="morador"
+        type="text"
+        class="form-control"
+        id="input-morador"
+        placeholder="Fulano de Tal"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="input-telefone" class="form-label"
+        >Telefone<span class="text-danger">*</span></label
+      >
+      <input
+        formControlName="telefone"
+        type="text"
+        class="form-control"
+        id="input-telefone"
+        placeholder="(**) * ****-****"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="input-email" class="form-label">Email</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        id="input-email"
+        placeholder="name@example.com"
+      />
+    </div>
+    <div class="mb-3">
+      <button class="btn-group btn-del" (click)="btnBackApartament()">
+        Voltar
+      </button>
+      <button class="btn-group btn-create" type="submit">Salvar</button>
+    </div>
+  </form>
+</div>

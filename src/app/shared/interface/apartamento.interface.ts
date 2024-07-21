@@ -4,7 +4,7 @@ export interface Apartamento {
   apartamento: number;
   morador: string;
   telefone: string;
-  email: string;
+  email: string|null;
   veiculos: Veiculos[]
 }
 

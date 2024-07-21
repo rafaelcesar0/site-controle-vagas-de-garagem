@@ -4,11 +4,12 @@ import { Apartamento } from '../../interface/apartamento.interface';
 import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
+import { InputSearchComponent } from "../input-search/input-search.component";
 
 @Component({
   selector: 'app-vehicle-table',
   standalone: true,
-  imports: [NgFor, NavBarComponent],
+  imports: [NgFor, NavBarComponent, InputSearchComponent],
   templateUrl: './vehicle-table.component.html',
 })
 export class VehicleTableComponent {

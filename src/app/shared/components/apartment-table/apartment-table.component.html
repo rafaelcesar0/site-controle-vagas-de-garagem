@@ -1,7 +1,8 @@
 <div class="border border-3 rounded-3 text-center">
   <app-nav-bar />
   <h1 class="title-table title-apartment">Tabela Apartamentos</h1>
-  <div class="text-end p-4">
+  <div class="text-end p-4" style="display: flex; height: 85px; gap: 40px; justify-content: space-between;">
+    <app-input-search/>
     <button class="btn-group btn-create" (click)="btnCreateApartament()">
       Create
     </button>
@@ -30,7 +31,7 @@
         <td>{{ apto.email }}</td>
         <td class="text-center">
           <button class="btn-group btn-edit">Edit</button>
-          <button class="btn-group btn-del">Delete</button>
+          <button class="btn-group btn-del" (click)="onDelete()">Delete</button>
         </td>
       </tr>
       }
