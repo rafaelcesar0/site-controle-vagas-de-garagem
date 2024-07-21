@@ -17,7 +17,7 @@ export class ApartamentosService {
     return this.http.post('/api/apartamento', payload);
   }
 
-  delete() {
-    
+  delete(id:number) {
+    return this.http.delete(`/api/apartamento/${id}`);
   }
 }

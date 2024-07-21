@@ -1,7 +1,13 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApartamentosService } from '../../services/apartamentos.service';
+import { ApartamentTableComponent } from '../apartment-table/apartment-table.component';
 
 @Component({
   selector: 'app-apartment-form',
@@ -11,6 +17,7 @@ import { ApartamentosService } from '../../services/apartamentos.service';
 })
 export class ApartamentFormComponent {
   router = inject(Router);
+  aptos = new ApartamentTableComponent().aptos;
 
   btnBackApartament() {
     this.router.navigate(['/']);
@@ -51,7 +58,10 @@ export class ApartamentFormComponent {
         email: this.form.controls.email.value,
       })
       .subscribe(() => {
-        alert('Sucesso!');
+        this.apartmentServece.getAll().subscribe((aptos) => {
+          this.aptos = aptos;
+          alert('Sucesso!');
+        });
       });
     this.router.navigateByUrl('/');
   }
