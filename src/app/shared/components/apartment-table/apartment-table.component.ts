@@ -4,10 +4,18 @@ import { ApartamentosService } from '../../services/apartamentos.service';
 import { Router } from '@angular/router';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
 import { InputSearchComponent } from "../input-search/input-search.component";
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-apartment-table',
   standalone: true,
-  imports: [NavBarComponent, InputSearchComponent],
+  imports: [
+    NavBarComponent,
+    InputSearchComponent,
+    NgxMaskDirective,
+    NgxMaskPipe,
+    NgFor,
+  ],
   templateUrl: './apartment-table.component.html',
 })
 export class ApartamentTableComponent {
@@ -26,7 +34,7 @@ export class ApartamentTableComponent {
     this.router.navigate(['/apartment-create']);
   }
 
-  onDelete(id: number){
+  onDelete(id: number) {
     if (confirm('Esse processo é irreversível, deseja prosseguir?')) {
       this.apartamentosService.delete(id).subscribe(() => {
         this.apartamentosService.getAll().subscribe((aptos) => {

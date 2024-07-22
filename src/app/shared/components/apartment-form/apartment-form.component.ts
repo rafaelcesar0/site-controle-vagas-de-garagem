@@ -8,11 +8,12 @@ import {
 import { Router } from '@angular/router';
 import { ApartamentosService } from '../../services/apartamentos.service';
 import { ApartamentTableComponent } from '../apartment-table/apartment-table.component';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 @Component({
   selector: 'app-apartment-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgxMaskDirective, NgxMaskPipe],
   templateUrl: './apartment-form.component.html',
 })
 export class ApartamentFormComponent {
@@ -44,25 +45,38 @@ export class ApartamentFormComponent {
     }),
     email: new FormControl<string>('', {
       nonNullable: true,
-      validators: Validators.required,
     }),
   });
 
   onSubmit() {
+    if (this.form.invalid) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
+
+    const formValue = this.form.getRawValue();
+
     this.apartmentServece
       .post({
-        bloco: parseInt(String(this.form.controls.bloco.value)),
-        apartamento: parseInt(String(this.form.controls.apartamento.value)),
-        morador: this.form.controls.morador.value,
-        telefone: this.form.controls.telefone.value,
-        email: this.form.controls.email.value,
+        bloco: Number(String(formValue.bloco)),
+        apartamento: Number(String(formValue.apartamento)),
+        morador: formValue.morador,
+        telefone: formValue.telefone,
+        email: formValue.email,
       })
       .subscribe(() => {
-        this.apartmentServece.getAll().subscribe((aptos) => {
+        this.apartmentServece.getAll().subscribe(async (aptos) => {
           this.aptos = aptos;
-          alert('Sucesso!');
+          await this.showAlert('Sucesso!');
+          this.router.navigateByUrl('/');
         });
       });
-    this.router.navigateByUrl('/');
+  }
+
+  showAlert(message: string): Promise<void> {
+    return new Promise<void>((resolve) => {
+      alert(message);
+      resolve();
+    });
   }
 }

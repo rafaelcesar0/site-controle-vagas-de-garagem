@@ -1,8 +1,16 @@
 <div class="border border-3 rounded-3 text-center">
   <app-nav-bar />
   <h1 class="title-table title-apartment">Tabela Apartamentos</h1>
-  <div class="text-end p-4" style="display: flex; height: 85px; gap: 40px; justify-content: space-between;">
-    <app-input-search/>
+  <div
+    class="text-end p-4"
+    style="
+      display: flex;
+      height: 85px;
+      gap: 40px;
+      justify-content: space-between;
+    "
+  >
+    <app-input-search />
     <button class="btn-group btn-create" (click)="btnCreateApartament()">
       Create
     </button>
@@ -21,20 +29,20 @@
       </tr>
     </thead>
     <tbody>
-      @for (apto of aptos; track apto) {
-      <tr>
+      <tr *ngFor="let apto of aptos">
         <th scope="row">{{ apto.id }}</th>
         <td>{{ apto.bloco }}</td>
         <td>{{ apto.apartamento }}</td>
         <td>{{ apto.morador }}</td>
-        <td>{{ apto.telefone }}</td>
+        <td>{{ apto.telefone | mask : "(00) 00000-0000" }}</td>
         <td>{{ apto.email }}</td>
         <td class="text-center">
           <button class="btn-group btn-edit">Edit</button>
-          <button class="btn-group btn-del" (click)="onDelete(apto.id)" >Delete</button>
+          <button class="btn-group btn-del" (click)="onDelete(apto.id)">
+            Delete
+          </button>
         </td>
       </tr>
-      }
     </tbody>
   </table>
 </div>
