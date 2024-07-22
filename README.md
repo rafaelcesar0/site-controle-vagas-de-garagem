@@ -1,3 +1,7 @@
+# Project preview
+
+https://github.com/user-attachments/assets/554fb2fd-e099-42ec-a3de-db4bc2230193
+
 # SiteControleVagasDeGaragem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
